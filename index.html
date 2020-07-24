@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="minusbtn1" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="fastinput" type="text" class="form-control text-center" value="1">
+                           <button  id="plusbtn1" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$ <span id="mobileprice">1219</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="minusbtn2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="secoundinput" type="text" class="form-control text-center" value="1">
+                           <button id="plusbtn2" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$ <span id="coverprice">59</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="totalamount">1278</span></h5>
+                        <h5>$ <span id="taxplus">0</span></h5>
+                        <h5>$<span id="totalprice">000</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <script>
+      // function plus button
+      function plusfunbutton(id){
+      var fastinputvalue = document.getElementById(id).value;
+      var convartnumber = parseFloat(fastinputvalue);
+      convartnumber = convartnumber + 1;
+      var testinglast = document.getElementById(id).value = convartnumber;
+      }
+      // function minus button
+      function minusfunbutton(id){
+      var fastinputvalue = document.getElementById(id).value;
+      var convartnumber = parseFloat(fastinputvalue);
+      convartnumber = convartnumber - 1;
+      var testinglast = document.getElementById(id).value = convartnumber;
+      }
+       // fast plus button
+      var plusbutton = document.getElementById('plusbtn1');
+      plusbutton.addEventListener('click', function(){
+      plusfunbutton("fastinput");
+      })
+      //  fast minus button
+       var plusbutton = document.getElementById('minusbtn1');
+      plusbutton.addEventListener('click', function(){
+      minusfunbutton("fastinput");
+      })
+         // --------------------------------------
+
+
+      //  mobile price plus
+
+       var plusbtnforamound = document.getElementById('plusbtn1');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('mobileprice').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber + 1219;
+          document.getElementById('mobileprice').innerText = convartnametonumber;
+
+       })
+      //  mobile price minus
+      var plusbtnforamound = document.getElementById('minusbtn1');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('mobileprice').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber - 1219;
+          document.getElementById('mobileprice').innerText = convartnametonumber;
+
+       })
+
+      //  secound plus button
+      
+      var plusbutton = document.getElementById('plusbtn2');
+      plusbutton.addEventListener('click', function(){
+      plusfunbutton("secoundinput");
+       
+       })
+      //  secound minus button
+
+      var plusbutton = document.getElementById('minusbtn2');
+      plusbutton.addEventListener('click', function(){
+      minusfunbutton("secoundinput");
+       
+       })
+      //  mobile cover plus
+      var plusbtnforamound = document.getElementById('plusbtn2');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('coverprice').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber + 59;
+          document.getElementById('coverprice').innerText = convartnametonumber;
+
+       })
+
+      //  mobile cover minus
+       var plusbtnforamound = document.getElementById('minusbtn2');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('coverprice').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber - 59;
+          document.getElementById('coverprice').innerText = convartnametonumber;
+
+       })
+      //  subtotal price
+      //  mobile subtotal price plus
+      var plusbtnforamound = document.getElementById('plusbtn1');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('totalamount').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber + 1219;
+          document.getElementById('totalamount').innerText = convartnametonumber;
+
+       })
+      //  mobile subtotal price minus
+      var plusbtnforamound = document.getElementById('minusbtn1');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('totalamount').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber - 1219;
+          document.getElementById('totalamount').innerText = convartnametonumber;
+
+       })
+      //  mobile cover subtotal price plus
+      var plusbtnforamound = document.getElementById('plusbtn2');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('totalamount').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber + 59;
+          document.getElementById('totalamount').innerText = convartnametonumber;
+
+       })
+      // mobile cover subtotal price minus
+
+        var plusbtnforamound = document.getElementById('minusbtn2');
+       plusbtnforamound.addEventListener('click',function(){
+          var mobilepriceamount = document.getElementById('totalamount').innerText;
+          var convartnametonumber = parseFloat(mobilepriceamount);
+          convartnametonumber = convartnametonumber - 59;
+          document.getElementById('totalamount').innerText = convartnametonumber;
+
+       })
+      //  tax ariea
+      // tax plus fast button
+      var plusbutton = document.getElementById('plusbtn1');
+      plusbutton.addEventListener('click', function(){
+         var tex = document.getElementById('taxplus').innerText;
+         var  convarttexttonumber =parseFloat(tex);
+         convarttexttonumber = convarttexttonumber + 4;
+         document.getElementById('taxplus').innerText = convarttexttonumber;
+      })
+      // tax minus fast button
+      var plusbutton = document.getElementById('minusbtn1');
+      plusbutton.addEventListener('click', function(){
+         var tex = document.getElementById('taxplus').innerText;
+         var  convarttexttonumber =parseFloat(tex);
+         convarttexttonumber = convarttexttonumber - 4;
+         document.getElementById('taxplus').innerText = convarttexttonumber;
+      })
+      // tax plus secound button
+      var plusbutton = document.getElementById('plusbtn2');
+      plusbutton.addEventListener('click', function(){
+         var tex = document.getElementById('taxplus').innerText;
+         var  convarttexttonumber =parseFloat(tex);
+         convarttexttonumber = convarttexttonumber + 2;
+         document.getElementById('taxplus').innerText = convarttexttonumber;
+      })
+      // tex minus secound button
+      var plusbutton = document.getElementById('minusbtn2');
+      plusbutton.addEventListener('click', function(){
+         var tex = document.getElementById('taxplus').innerText;
+         var  convarttexttonumber =parseFloat(tex);
+         convarttexttonumber = convarttexttonumber - 2;
+         document.getElementById('taxplus').innerText = convarttexttonumber;
+      })
+      //  total ariea
+      var totalprice = document.getElementById('totalprice').innerText;
+      var totalconvart = parseFloat(totalprice);
+      totalconvart = convartnametonumber + convarttexttonumber;
+      document.getElementById('totalprice').innerText = totalconvart;
+      console.log(totalconvart);      
+      
+   </script>
+</body>
+
+</html>
