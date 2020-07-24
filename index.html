@@ -165,27 +165,27 @@
       var plusbtnforamound = document.getElementById('plusbtn1');
        plusbtnforamound.addEventListener('click',function(){
           var mobilepriceamount = document.getElementById('totalamount').innerText;
-          var convartnametonumber = parseFloat(mobilepriceamount);
-          convartnametonumber = convartnametonumber + 1219;
-          document.getElementById('totalamount').innerText = convartnametonumber;
+          var convartsubtotal = parseFloat(mobilepriceamount);
+          convartsubtotal = convartsubtotal + 1219;
+          document.getElementById('totalamount').innerText = convartsubtotal;
 
        })
       //  mobile subtotal price minus
       var plusbtnforamound = document.getElementById('minusbtn1');
        plusbtnforamound.addEventListener('click',function(){
           var mobilepriceamount = document.getElementById('totalamount').innerText;
-          var convartnametonumber = parseFloat(mobilepriceamount);
-          convartnametonumber = convartnametonumber - 1219;
-          document.getElementById('totalamount').innerText = convartnametonumber;
+          var convartsubtotal = parseFloat(mobilepriceamount);
+          convartsubtotal = convartsubtotal - 1219;
+          document.getElementById('totalamount').innerText = convartsubtotal;
 
        })
       //  mobile cover subtotal price plus
       var plusbtnforamound = document.getElementById('plusbtn2');
        plusbtnforamound.addEventListener('click',function(){
           var mobilepriceamount = document.getElementById('totalamount').innerText;
-          var convartnametonumber = parseFloat(mobilepriceamount);
-          convartnametonumber = convartnametonumber + 59;
-          document.getElementById('totalamount').innerText = convartnametonumber;
+          var convartsubtotal = parseFloat(mobilepriceamount);
+          convartsubtotal = convartsubtotal + 59;
+          document.getElementById('totalamount').innerText = convartsubtotal;
 
        })
       // mobile cover subtotal price minus
@@ -193,9 +193,9 @@
         var plusbtnforamound = document.getElementById('minusbtn2');
        plusbtnforamound.addEventListener('click',function(){
           var mobilepriceamount = document.getElementById('totalamount').innerText;
-          var convartnametonumber = parseFloat(mobilepriceamount);
-          convartnametonumber = convartnametonumber - 59;
-          document.getElementById('totalamount').innerText = convartnametonumber;
+          var convartsubtotal = parseFloat(mobilepriceamount);
+          convartsubtotal = convartsubtotal - 59;
+          document.getElementById('totalamount').innerText =convartsubtotal;
 
        })
       //  tax ariea
@@ -203,9 +203,9 @@
       var plusbutton = document.getElementById('plusbtn1');
       plusbutton.addEventListener('click', function(){
          var tex = document.getElementById('taxplus').innerText;
-         var  convarttexttonumber =parseFloat(tex);
-         convarttexttonumber = convarttexttonumber + 4;
-         document.getElementById('taxplus').innerText = convarttexttonumber;
+         var  convartsubtotal =parseFloat(tex);
+         convartsubtotal = convartsubtotal + 4;
+         document.getElementById('taxplus').innerText = convartsubtotal;
       })
       // tax minus fast button
       var plusbutton = document.getElementById('minusbtn1');
@@ -232,11 +232,15 @@
          document.getElementById('taxplus').innerText = convarttexttonumber;
       })
       //  total ariea
+      
+      var subtotalprice = document.getElementById('totalamount').innerText;
+      var subtotalpriceconvart = parseFloat(subtotalprice);
+      var productstex = document.getElementById('taxplus').innerText;
+      var productstexconvart = parseFloat(productstex);
       var totalprice = document.getElementById('totalprice').innerText;
       var totalconvart = parseFloat(totalprice);
-      totalconvart = convartnametonumber + convarttexttonumber;
-      document.getElementById('totalprice').innerText = totalconvart;
-      console.log(totalconvart);      
+      totalconvart = subtotalpriceconvart + productstexconvart;  
+      console.log(totalconvart);
       
    </script>
 </body>
